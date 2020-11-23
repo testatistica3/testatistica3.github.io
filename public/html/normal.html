@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/normal.css">
+    <title>Five Tech | Normal</title>
+    <link rel="icon" href="../images/Cinco.png">
+</head>
+
+<body>
+    <!--<div id="nav">
+        <nav>
+            <ul>
+                <li><input type="button" value="BINOMIAL" id="binomial" name="porcentOption" checked></label>
+                </li>
+                <li><label><input type="button" value="NORMAL" id="normal" name="porcentOption"></label></li>
+                <li><label><input type="button" value="UNIFORME" id="uniforme" name="porcentOption"></label></li>
+            </ul>
+        </nav>
+    </div>-->
+    <input type="checkbox" id="bt_menu">
+    <label for="bt_menu">&#9776;</label>
+    <nav id="nav">
+        <ul>
+            <li><a href="#" >ESTATÍSTICA
+                    <img id="seta1" src="../images/seta2.png" width="15px" height="13px">
+                </a>
+                <ul class="" id>
+                    <li><a href="./descritivaMaterialize.html">DESCRITIVA</a></li>
+                    <li><a href="./escolha.html"> PROBABILIDADE</a></li>
+                    <li><a href="./correlacao.html">CORRELAÇÂO E REGRESSÂO</a></li>
+                </ul>
+            </li>
+            <li><a href="../../index.html" id="seta2">HOME</a></li>
+            <li><a href="./sobre.html" id="seta3">SOBRE</a></li>
+        </ul>
+        <div id="fivetech">FIVE TECH</div>
+    </nav>
+    <div class="bloco">
+        <h1>NORMAL</h1>
+        <div class="dados">
+            <p> Média<br>
+                <input type="text" name="mediaNormal" id="mediaNormal" onchange="storeMediaNormal(this.value)"
+                    placeholder="Digite a média...">
+                <label for="mediaNormal"></label></p>
+
+            <p>Desvio Padrão<br>
+                <input type="text" name="desvioNormal" id="desvioNormal" onchange="storeDesvioNormal(this.value)"
+                    placeholder="Digite o DP...">
+                <label for="desvioNormal"></label></p>
+
+            <p><select class="language-choice" name="" id="normalOptions" onchange="showNormalInputs(this.value)">
+                    <option disabled selected hidden>Selecione Intervalo</option>
+                    <option value="Mais que">Maior Que</option>
+                    <option value="Menos que">Menor Que</option>
+                    <option value="Entre dois valores">Entre</option>
+                </select></p>
+
+            <input type="text" id="maior-que-normal" onchange="storemaisQue(this.value)" placeholder="Maior Valor" ...>
+
+            <input type="text" id="menor-que-normal" onchange="storemenosQue(this.value)" placeholder="Menor Valor" ...>
+        </div>
+        <input type="text" id="primeiro-valor-normal" onchange="storePrimeiroValorNormal(this.value)"
+            placeholder="Primerio Valor...">
+        <input type="text" id="segundo-valor-normal" onchange="storeSegundoValorNormal(this.value)"
+            placeholder="Segundo Valor...">
+        <!--<p>Evento<input type="text" name="k" id="k" onchange="storeK(this.value)"
+                    placeholder="Eventos separados por vírgula">
+                <label for="k"></label></p><br>-->
+
+        <button type="button" id="btnBinomial" onclick="calculateNormal()">CALCULAR</button>
+        <h1 id="resultadoNormal"></h1>
+        <button id="clearNormal">LIMPAR</button>
+        <button id="btnVoltar"><a href="../html/escolha.html" id="btnVoltar">VOLTAR</a></button>
+    </div>
+
+    <!--<footer>
+        &copyEstatísticas
+
+    </footer>-->
+    <!--
+        <h2 id="probabilidade"></h2>
+        <h2 id="media"></h2>
+        <h2 id="desvio"></h2>-->
+    <!--
+        <table style="display: none;">
+            <tr class="#">
+                <th id="probabilidade"></th>
+                <th id="media"></th>
+                <th id="desvio"></th>
+            </tr>
+            <!--<tr id="total">
+                <th id="totalInputs"></th>
+            </tr>
+        </table>-->
+
+    </div>
+    <!-- <script src="../../src/js/tabelaNormal.js"></script> -->
+    <script src="../../src/js/normal/tabelaNormal.js"></script>
+    <script src="../../src/js/normal/normal.js"></script>
+    <script src="../../src/js/normal/calculosNormal.js"></script>
+
+
+</body>
+
+
+</html>

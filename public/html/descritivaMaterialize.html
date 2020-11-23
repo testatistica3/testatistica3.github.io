@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" type="text/css" href="../css/style.css">-->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <!-- <script src="../../src/js/papaparse.min.js"></script> -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,800&display=swap" rel="stylesheet">
+    <title>Five Tech | Descritiva</title>
+    <link rel="icon" href="../images/Cinco.png">
+    <link rel="stylesheet" href="../css/dragAndDropTable.css">
+    <link rel="stylesheet" href="../css/cssMaterialize.css">
+</head>
+<!--
+<nav>
+    <div id="nav-wrapper">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">DESCRITIVA</nav>
+        <a class="brand-logo">DESCRITIVA</a>
+    </div>
+</nav>
+</header>-->
+<script>
+    var variavelGlobalDescritiva = '';
+</script>
+
+<body id="cont">
+    <input type="checkbox" id="bt_menu">
+    <label for="bt_menu">&#9776;</label>
+    <nav id="nav">
+        <ul>
+            <li><a href="#">ESTATÍSTICA
+                    <img id="seta1" src="../images/seta2.png" width="15px" height="13px">
+                </a>
+                <ul class="" id>
+                    <li><a href="./descritivaMaterialize.html">DESCRITIVA</a></li>
+                    <li><a href="./escolha.html"> PROBABILIDADE</a></li>
+                    <li><a href="./correlacao.html">CORRELAÇÂO E REGRESSÂO</a></li>
+                </ul>
+            </li>
+            <li><a href="../../index.html" id="seta2">HOME</a></li>
+            <li><a href="./sobre.html" id="seta3">SOBRE</a></li>
+        </ul>
+        <div id="fivetech">FIVE TECH</div>
+    </nav>
+
+    <!--<div id="nav-wrapper">
+         <nav class="navbar navbar-expand-md navbar-dark bg-dark"></nav>
+        <a class="brand-logo">DESCRITIVA</a>
+    </div>-->
+
+    <div>
+        <div class="container align-self-center">
+
+            <div id="coluna" class="row">
+                <div id="corpo" class="col-md-10 ">
+                    <div id="primeira">
+                        <h1>DESCRITIVA</h1>
+                        <!--<form action="">-->
+                        <!--
+                        <div class="form-group">
+                            <p><label id="nomeVariavel">Nome da Variável</label></p></br>
+                            <input class="form-control" type="text" id="varNameInput"
+                                placeholder="Insira o nome da variável"><label><span><img id="varNameHelp"
+                                        src="../images/botao-de-informacao.png"></span></label>
+                        </div>
+                        <div class="form-group">
+                            <p id="nomeDados">Insira Dados</p>
+                            <input class="form-control" type="text" id="inputValues"
+                                placeholder="Insira valores separados por ponto/vírgula(;) sem espaços">
+                            <label class="labelInput">
+                                <input class="form-control" type="file" required id="csv-file" name="csv-file"
+                                    class="csv-file" /><span> ARQUIVO.CSV </span></label></br></br>
+
+                        </div>
+                        -->
+                        <div>
+                            <label><input type="radio" id="descritivaManualRadio" onclick="showInputOptions()"
+                                    name="inputOption" checked>INSIRA DADOS MANUALMENTE</label>
+                            <label><input type="radio" id="uploadDescritivaRadio" onclick="showInputOptions()"
+                                    name="inputOption">UPLOAD DE ARQUIVOS</label>
+                        </div>
+                        <div id="manualInput">
+                            <div class="form-group">
+                                <p><label id="nomeVariavel">Nome da Variável</label></p></br>
+                                <input class="form-control" type="text" id="varNameInput"
+                                    placeholder="Insira o nome da variável"
+                                    onchange="storeResearchName(this.value)"><label><span><img id="varNameHelp"
+                                            src="../images/botao-de-informacao.png"></span></label>
+                            </div>
+
+                            <div class="form-group">
+                                <p id="nomeDados">Insira Dados</p>
+                                <input class="form-control" type="text" id="inputValues"
+                                    onchange="storeInputedData(this.value)"
+                                    placeholder="Insira valores separados por ponto/vírgula(;) sem espaços">
+                            </div>
+                        </div>
+
+                        <div id="fileInput">
+                            <!--<p><label id="nomeVariavel">Selecione um Arquivo .csv</label></p></br>-->
+                            <label class="labelInput">
+                                <input class="form-control" type="file" required id="csv-file" name="csv-file"
+                                    class="csv-file">SELECIONE ARQUIVO (.CSV)</label></br></br>
+                        </div>
+                        <div class="form-group" id="variTipos">
+                            <div class="form-control" id="variavel">
+                                <p><label><input type="radio" id="qltNominal" name="radi2"><span> VARIÁVEL
+                                            QUALITATIVA
+                                            NOMINAL</span></label></p>
+
+                                <p><label><input type="radio" name="radi2" id="qltOrdinal"><span> VARIÁVEL
+                                            QUALITATIVA
+                                            ORDINAL</span></label></p>
+                                <p><label><input type="text" name="radi2" id="ordemQltOrdinal"
+                                            placeholder="Informe a ordem das variáveis" display="none"
+                                            onchange="storeOrderOrdinal(this.value)"></label></p>
+                                <p><label><input type="radio" name="radi2" id="qtDiscreta"><span> VARIÁVEL
+                                            QUANTITATIVA
+                                            DISCRETA</span></label></p>
+                                <p><label><input type="radio" name="radi2" id="qtContinua" checked><span> VARIÁVEL
+                                            QUANTITATIVA
+                                            CONTÍNUA</span></label></p>
+                            </div>
+                        </div>
+                        <div class="form-group" id="variAmostra">
+                            <div id="amos">
+                                <p><label><input type="radio" name="radi" id="amostra"> AMOSTRA
+                                    </label><img id="amostraHelp" src="../images/botao-de-informacao.png"></p>
+                                <p><label><input type="radio" name="radi" id="populacao" checked> POPULAÇÃO
+                                    </label><img id="populacaoHelp" src="../images/botao-de-informacao.png"></p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="select">
+                                <p><select class="language-choice" name="" id="separatrizes" onchange="showOptions()">
+                                        <option disabled selected hidden>Selecione Separatriz</option>
+                                        <option value="Quartil">Quartil</option>
+                                        <option value="Quintil">Quintil</option>
+                                        <option value="Decil">Decil</option>
+                                        <option value="Porcentil">Porcentil</option>
+                                    </select>
+                                    <select class="language-choice2" name="" id="quartilOptions" style="display: none;">
+                                        <option disabled selected hidden>Q</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                    <select class="language-choice3" name="" id="quintilOptions" style="display: none;">
+                                        <option disabled selected hidden>K</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                    <select class="language-choice4" name="" id="decilOptions" style="display: none;">
+                                        <option disabled selected hidden>D</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                    <input type="range" max="100" min="1" step="1" id="porcentilOptions" value="1"
+                                        onchange="showValue(this.value)" style="display: none;">
+                                    <span id="porcentilShow"></span></p>
+                            </div>
+                        </div>
+                        <!-- Botão calcular-->
+                        <p><button id="btnCalcular" onclick="calcular()">CALCULAR</button></p>
+                        </form>
+                        <table id="table" style="display: none;">
+                            <tr class="tr">
+                                <th id="varNameHeader"></th>
+                                <th id="fi"></th>
+                                <th id="frpor"></th>
+                                <th id="fac"></th>
+                                <th id="facpor"></th>
+                            </tr>
+                            <!--<tr id="total">
+                                <th id="totalInputs"></th>
+                            </tr>-->
+                        </table>
+
+                        <table id="table2" style="display: none;">
+                            <tr class="tr">
+                                <th id="media"></th>
+                                <th id="moda"></th>
+                                <th id="mediana"></th>
+                                <th id="totalValores"></th>
+                            </tr>
+                        </table>
+
+                        <table id="table3" style="display: none;">
+                            <tr class="tr">
+                                <th id="desvioPadrao"></th>
+                                <th id="coeficienteVariacao"></th>
+                                <th id="medidaSeparatriz"></th>
+                            </tr>
+                        </table>
+
+                        <div id="grafico" class="col s6 m8 l6">
+                            <canvas id="myChart" width="100" height="100"></canvas>
+                        </div>
+
+                        <button id="btnLimpar" onclick="limparDescritiva()">LIMPAR</button>
+                        <a href="../../index.html"><button id="btnVoltar">VOLTAR</button></a>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <script src="../../src/js/descritivaPageControls.js"></script>
+            <script src="../../src/js/calculos.js"></script>
+            <script src="../../src/js/createHeader.js"></script>
+            <script src="../../src/js/tables.js"></script>
+            <script src="../../src/js/grafico.js"></script>
+            <script src="../../src/js/validacao.js"></script>
+            <script src="../../src/js/calculosContinua.js"></script>
+            <script src="../../src/js/upload.js"></script>
+            <script src="../../src/js/descritiva.js"></script>
+            -->
+            <!--<script src="../../src/js/materialize.js"></script>-->
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+            <script src="../../src/js/descritiva/descritivaPageControls.js"></script>
+            <script src="../../src/js/descritiva/calculosDescritiva.js"></script>
+            <script src="../../src/js/descritiva/calculosContinua.js"></script>
+            <script src="../../src/js/descritiva/valuesStorage.js"></script>
+            <script src="../../src/js/descritiva/fileConversion.js"></script>
+            <script src="../../src/js/descritiva/createHeader.js"></script>
+            <script src="../../src/js/descritiva/dragAndDropTable.js"></script>
+            <script src="../../src/js/descritiva/tables.js"></script>
+            <script src="../../src/js/descritiva/grafico.js"></script>
+            <script src="../../src/js/descritiva/descritiva.js"></script>
+</body>
+</html>

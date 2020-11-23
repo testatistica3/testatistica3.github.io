@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/uniforme.css">
+    <title>Five Tech | Uniforme</title>
+    <link rel="icon" href="../images/Cinco.png">
+</head>
+
+<body>
+    <!--<div id="nav">
+        <nav>
+            <ul>
+                <li><input type="button" value="BINOMIAL" id="binomial" name="porcentOption" checked></label>
+                </li>
+                <li><label><input type="button" value="NORMAL" id="normal" name="porcentOption"></label></li>
+                <li><label><input type="button" value="UNIFORME" id="uniforme" name="porcentOption"></label></li>
+            </ul>
+        </nav>
+    </div>-->
+    <input type="checkbox" id="bt_menu">
+    <label for="bt_menu">&#9776;</label>
+    <nav id="nav">
+        <ul>
+            <li><a href="#" >ESTATÍSTICA
+                    <img id="seta1" src="../images/seta2.png" width="15px" height="13px">
+                </a>
+                <ul class="" id>
+                    <li><a href="./descritivaMaterialize.html">DESCRITIVA</a></li>
+                    <li><a href="./escolha.html"> PROBABILIDADE</a></li>
+                    <li><a href="./correlacao.html">CORRELAÇÂO E REGRESSÂO</a></li>
+                </ul>
+            </li>
+            <li><a href="../../index.html" id="seta2">HOME</a></li>
+            <li><a href="./sobre.html" id="seta3">SOBRE</a></li>
+        </ul>
+        <div id="fivetech">FIVE TECH</div>
+    </nav>
+    <div class="bloco">
+        <h1>UNIFORME</h1>
+        <div class="dados">
+            <p> Ponto Mínimo<br>
+                <input type="text" name="uniformeMinimo" id="uniformeMinimo" onchange="storeMinimo(this.value)"
+                    placeholder="Digite o ponto mínimo...">
+                <label for="uniformeMinimo"></label></p>
+
+            <p> Ponto Maxímo<br>
+                <input type="text" name="uniformeMaximo" id="uniformeMaximo" onchange="storeMaximo(this.value)"
+                    placeholder="Digite o ponto maxímo...">
+                <label for="uniformeMaximo"></label></p>
+
+            <p><select class="language-choice" name="" id="uniformeSelect" onchange="showInputs()">
+                    <option disabled selected hidden>Selecione Intervalo</option>
+                    <option value="Maior que">Maior Que</option>
+                    <option value="Menor que">Menor Que</option>
+                    <option value="Entre dois valores">Entre</option>
+                </select>
+
+            <div id="divMaiorMenorQue">
+                <!--<label for="uniformeMaiorOuMenorQue" id="valorCalculo">Digite Valor p/ Calculo</label>-->
+                <input type="text" name="uniformeMaiorOuMenorQue" id="uniformeMaiorOuMenorQue"
+                    onchange="storeMaiorMenorQue(this.value)" placeholder="Digite Valor p/ Calculo">
+            </div>
+
+            <div id="divEntreDoisValores">
+                <!--<label for="uniformeValor1" id="primValor">Primeiro Valor</label>-->
+                <input type="text" name="uniformeValor1" id="uniformeValor1" onchange="storeValor1(this.value)" placeholder="Primeiro Valor...">
+                <!--<label for="uniformeValor2" id="segunValor">Segundo Valor</label>-->
+                <input type="text" name="uniformeValor2" id="uniformeValor2" onchange="storeValor2(this.value)" placeholder="Segundo Valor...">
+            </div>
+
+            <!--<p>Evento<input type="text" name="k" id="k" onchange="storeK(this.value)"
+                    placeholder="Eventos separados por vírgula">
+                <label for="k"></label></p><br>-->
+
+            <button type="button" id="btnBinomial" onclick="calcularUniforme()">CALCULAR</button>
+
+        </div>
+
+        <!--<footer>
+        &copyEstatísticas
+
+    </footer>-->
+        <!--
+        <h2 id="probabilidade"></h2>
+        <h2 id="media"></h2>
+        <h2 id="desvio"></h2>-->
+        <!---->
+        <table style="display: none;" id="tableResult">
+            <tr class="th">
+                <th>Probabilidade</th>
+                <th>Variância</th>
+                <th>Desvio Padrão</th>
+                <th id="med">Média</th>
+            </tr>
+            <tr>
+                <td id="uniformeProbabilidade"></td>
+                <td id="uniformeVariancia"></td>
+                <td id="uniformeDesvioPadrao"></td>
+                <td id="uniformeMedia"></td>
+            </tr>
+            <!--<tr id="total">
+                <th id="totalInputs"></th>
+            </tr>-->
+        </table>
+            <button id="clearNormal" onclick="limparUniforme()" >LIMPAR</button>
+            <button type="button" id="btnVoltar"><a href="../html/escolha.html" id="btnVoltar" >VOLTAR</a></button>
+
+    </div>
+
+    <script src="../../src/js/uniforme/uniformePageControl copy.js"></script>
+    <script src="../../src/js/uniforme/calculosUniforme copy.js"></script>
+</body>
+
+
+</html>

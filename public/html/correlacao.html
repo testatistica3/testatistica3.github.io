@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/correlacao.css">
+    <title>Five Tech | Correlação</title>
+    <link rel="icon" href="../images/Cinco.png">
+</head>
+    <script>
+    var variavelGlobalCorrelacao = '';    
+    </script>
+<body>
+    <input type="checkbox" id="bt_menu">
+    <label for="bt_menu">&#9776;</label>
+    <nav id="nav">
+        <ul>
+            <li><a href="#" >ESTATÍSTICA
+                    <img id="seta1" src="../images/seta2.png" width="15px" height="13px">
+                </a>
+                <ul class="" id>
+                    <li><a href="./descritivaMaterialize.html">DESCRITIVA</a></li>
+                    <li><a href="./escolha.html"> PROBABILIDADE</a></li>
+                    <li><a href="./correlacao.html">CORRELAÇÂO E REGRESSÂO</a></li>
+                </ul>
+            </li>
+            <li><a href="../../index.html" id="seta2">HOME</a></li>
+            <li><a href="./sobre.html" id="seta3">SOBRE</a></li>
+        </ul>
+        <div id="fivetech">FIVE TECH</div>
+    </nav>
+
+    <div class="bloco">
+        <h1>CORRELAÇÃO E REGRESSÃO</h1>
+
+        <!-- botao radio de opcao de entrada de dados -->
+        <div>
+            <input type="radio" checked onclick="showInputs()" id="correlacaoManual" name="correlacaoOption">Insira Dados Manualmente</button>
+            <input type="radio" onclick="showInputs()" id="correlacaoUpload" name="correlacaoOption">Upload de Arquivos</button>
+        </div>
+
+        <!-- botão de upload do arquivo -->
+        <div id="csv-upload" style="display: none;">
+            <input type="file" id="csvUpload">SELECIONE ARQUIVO (.CSV)</button>
+        </div>
+
+        <!-- div com os inputs manuais -->
+        <div class="dados" id="correlacaoInputsDiv">
+            <p> Valores de X <br>
+                <input type="text" name="valoresX" id="valoresX" onchange="storeX(this.value)"
+                    placeholder="Informe os valores de X separados por ponto/vírgula... ">
+            </p>
+            <p> Valores de Y <br>
+                <input type="text" name="valoresY" id="valoresY" onchange="storeY(this.value)"
+                    placeholder="Informe os valores de X separados por ponto/vírgula... ">
+            </p>
+        </div>
+
+        <div>
+
+        </div>
+
+        <div>
+            <button id="calcular" onclick="calcularCorrelacao()">CALCULAR</button>
+        </div>
+        <!--
+        <div>
+            <h2 id="valorCorrelacao"></h2>
+            <h2 id="forcaCorrelacao"></h2>
+        </div>
+        -->
+
+        <!-- Tabela para demonstração do resultado-->
+
+        <table style="display: none;" id="tableResult">
+            <tr>
+                <th>Valor Correlação</th>
+                <th>Força Correlação</th>
+                <th id="regre">Equação Regressão</th>
+
+            </tr>
+            <tr>
+                <td id="valorCorrelacao"></td>
+                <td id="forcaCorrelacao"></td>
+                <td id="regressaoFormula"></td>
+                <!--<tr id="regressaoFormula"></tr>-->
+            </tr>
+        </table>
+
+        <!--   
+        <div id="regressao">
+            <h1 id="regressaoFormula"></h1>
+        </div>
+        -->
+
+        
+        <div id="regressao" display="none">
+        <!--<h3>Regressão</h3>-->
+        <!--<h4 id="regressaoFormula"></h4>-->
+            <label for="regressaoX" id="proj">Insira valores independentes de X ou Y</label><br>
+            <input type="text" name="regressaoX" onchange="storeRegressaoX(this.value)" id="regressaoX" placeholder="Valores p/ X...">
+        <!--<label for="regressaoY">Insira os valores independentes de Y</label>-->
+            <input type="text" name="regressaoY" id="regressaoY" onchange="storeRegressaoY(this.value)" placeholder="Valores p/ Y..."><br>
+            <button id="calcular2" onclick="calculateRegressao()">CALCULAR</button>
+            <h3 id="regressaoResult"></h3>
+        </div>
+        <div id="grafico" class="#">
+            <canvas id="myChart"></canvas>
+        </div>
+        
+
+        <button id="clearNormal" onclick="limparCorrelacao()">LIMPAR</button>
+        <button type="button" id="btnVoltar"><a href="../html/escolha.html" id="btnVoltar">VOLTAR</a></button>
+    </div>
+    <!--
+    <script src="../../src/js/correlacao/correlacaoControlsAndStorage copy.js"></script>
+    <script src="../../src/js/correlacao/calculosCorrelacao copy.js"></script>
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="../../src/js/descritiva/grafico.js"></script>
+    <script src="../../src/js/correlacao/correlacaoControlsAndStorage.js"></script>
+    <script src="../../src/js/correlacao/fileConversionCorrelacao.js"></script>
+    <script src="../../src/js/correlacao/calculosCorrelacao copy.js"></script>
+    <script src="../../src/js/correlacao/chart.js"></script>
+</body>
+
+</html>
